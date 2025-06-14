@@ -1289,6 +1289,7 @@ libs:
   - src/core/channelz/channel_trace.cc
   - src/core/channelz/channelz.cc
   - src/core/channelz/channelz_registry.cc
+  - src/core/channelz/property_list.cc
   - src/core/client_channel/backup_poller.cc
   - src/core/client_channel/client_channel.cc
   - src/core/client_channel/client_channel_factory.cc
@@ -2813,6 +2814,7 @@ libs:
   - src/core/channelz/channel_trace.cc
   - src/core/channelz/channelz.cc
   - src/core/channelz/channelz_registry.cc
+  - src/core/channelz/property_list.cc
   - src/core/client_channel/backup_poller.cc
   - src/core/client_channel/client_channel.cc
   - src/core/client_channel/client_channel_factory.cc
@@ -4404,6 +4406,7 @@ libs:
   - src/core/channelz/channel_trace.h
   - src/core/channelz/channelz.h
   - src/core/channelz/channelz_registry.h
+  - src/core/channelz/property_list.h
   - src/core/config/core_configuration.h
   - src/core/credentials/call/call_credentials.h
   - src/core/credentials/call/call_creds_util.h
@@ -4756,6 +4759,7 @@ libs:
   - src/core/channelz/channel_trace.cc
   - src/core/channelz/channelz.cc
   - src/core/channelz/channelz_registry.cc
+  - src/core/channelz/property_list.cc
   - src/core/config/core_configuration.cc
   - src/core/credentials/call/call_creds_util.cc
   - src/core/credentials/call/composite/composite_call_credentials.cc
@@ -6272,6 +6276,7 @@ targets:
   - src/core/channelz/channel_trace.h
   - src/core/channelz/channelz.h
   - src/core/channelz/channelz_registry.h
+  - src/core/channelz/property_list.h
   - src/core/config/core_configuration.h
   - src/core/credentials/transport/alts/check_gcp_environment.h
   - src/core/credentials/transport/alts/grpc_alts_credentials_options.h
@@ -6590,6 +6595,7 @@ targets:
   - src/core/channelz/channel_trace.cc
   - src/core/channelz/channelz.cc
   - src/core/channelz/channelz_registry.cc
+  - src/core/channelz/property_list.cc
   - src/core/config/core_configuration.cc
   - src/core/credentials/transport/alts/check_gcp_environment.cc
   - src/core/credentials/transport/alts/check_gcp_environment_linux.cc
@@ -10368,6 +10374,7 @@ targets:
   - src/core/channelz/channel_trace.h
   - src/core/channelz/channelz.h
   - src/core/channelz/channelz_registry.h
+  - src/core/channelz/property_list.h
   - src/core/config/core_configuration.h
   - src/core/credentials/transport/alts/check_gcp_environment.h
   - src/core/credentials/transport/alts/grpc_alts_credentials_options.h
@@ -10686,6 +10693,7 @@ targets:
   - src/core/channelz/channel_trace.cc
   - src/core/channelz/channelz.cc
   - src/core/channelz/channelz_registry.cc
+  - src/core/channelz/property_list.cc
   - src/core/config/core_configuration.cc
   - src/core/credentials/transport/alts/check_gcp_environment.cc
   - src/core/credentials/transport/alts/check_gcp_environment_linux.cc
@@ -10979,6 +10987,7 @@ targets:
   build: test
   language: c++
   headers:
+  - src/core/channelz/property_list.h
   - src/core/ext/transport/chttp2/transport/flow_control.h
   - src/core/ext/transport/chttp2/transport/frame.h
   - src/core/ext/transport/chttp2/transport/http2_settings.h
@@ -11043,6 +11052,7 @@ targets:
   - src/core/util/time.h
   - third_party/upb/upb/generated_code_support.h
   src:
+  - src/core/channelz/property_list.cc
   - src/core/ext/transport/chttp2/transport/flow_control.cc
   - src/core/ext/transport/chttp2/transport/frame.cc
   - src/core/ext/transport/chttp2/transport/http2_settings.cc
@@ -12010,6 +12020,7 @@ targets:
   - src/core/channelz/channel_trace.h
   - src/core/channelz/channelz.h
   - src/core/channelz/channelz_registry.h
+  - src/core/channelz/property_list.h
   - src/core/channelz/ztrace_collector.h
   - src/core/config/core_configuration.h
   - src/core/credentials/transport/alts/check_gcp_environment.h
@@ -12348,6 +12359,7 @@ targets:
   - src/core/channelz/channel_trace.cc
   - src/core/channelz/channelz.cc
   - src/core/channelz/channelz_registry.cc
+  - src/core/channelz/property_list.cc
   - src/core/config/core_configuration.cc
   - src/core/credentials/transport/alts/check_gcp_environment.cc
   - src/core/credentials/transport/alts/check_gcp_environment_linux.cc
@@ -15127,11 +15139,13 @@ targets:
   - src/core/util/json/json.h
   - src/core/util/time.h
   src:
+  - src/core/channelz/property_list.cc
   - src/core/util/time.cc
   - test/core/channelz/property_list_test.cc
   - third_party/googletest/googlemock/src/gmock_main.cc
   deps:
   - gtest
+  - absl/container:flat_hash_map
   - absl/status:statusor
   - gpr
 - name: proto_buffer_reader_test
